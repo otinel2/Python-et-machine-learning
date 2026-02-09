@@ -50,12 +50,13 @@ while j < 5: # La condition while vérifie si la variable j est inférieure à 5
     j += 1
 
 
-# exo sur les conditions
+# exo sur les conditions (ecris une fonction qui affiche les 10 premiers nombres de la séquence de Fibonacci)
 def fibonacci(n):
-    X, Y = 0, 1
+    X= 0
+    Y = 1
     for i in range(n):
         print(X)  # Affiche le nombre actuel de la séquence de Fibonacci
-        X, Y = Y, X + Y  # Calcule le prochain nombre et décale les valeurs pour la prochaine itération
+        X, Y = Y, X + Y  # Met à jour les valeurs de X et Y pour le prochain nombre de la séquence de Fibonacci
 fibonacci(10)  # Affiche les 10 premiers nombres de la séquence de Fibonacci
 
  
