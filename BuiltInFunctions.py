@@ -75,9 +75,14 @@ with open('fichier.txt', 'w') as f:
         f.write("{}^2 = {}\n".format(i, i**2)) # Écrit une ligne dans le fichier pour chaque nombre de 0 à 9, où la ligne contient le nombre suivi de son carré (par exemple, "0^2 = 0", "1^2 = 1", etc.). La syntaxe "{}^2 = {}\n".format(i, i**2) formate la chaîne de caractères en remplaçant les accolades {} par les valeurs de i et i**2 respectivement, et ajoute un saut de ligne à la fin de chaque ligne écrite dans le fichier.
 
 
-# exo ecrit une fonction qui lit le fichier "fichier.txt" et affiche les lignes qui contiennent dans une liste
+# # exo ecrit une fonction qui lit le fichier "fichier.txt" et affiche les lignes qui contiennent dans une liste
+# with open('fichier.txt', 'r') as f:
+#     liste = []
+#     for ligne in f:
+#         liste.append(ligne.strip()) # Ajoute chaque ligne du fichier à la liste après avoir supprimé les espaces blancs en début et en fin de ligne avec strip().
+# print(liste) # Affiche la liste des lignes lues à partir du fichier "fichier.txt", où chaque élément de la liste est une ligne du fichier sans les espaces blancs (par exemple, ["0^2 = 0", "1^2 = 1", ..., "9^2 = 81"]).
+
+# correction de l'exo
 with open('fichier.txt', 'r') as f:
-    liste = []
-    for ligne in f:
-        liste.append(ligne.strip()) # Ajoute chaque ligne du fichier à la liste après avoir supprimé les espaces blancs en début et en fin de ligne avec strip().
-print(liste) # Affiche la liste des lignes lues à partir du fichier "fichier.txt", où chaque élément de la liste est une ligne du fichier sans les espaces blancs (par exemple, ["0^2 = 0", "1^2 = 1", ..., "9^2 = 81"]).
+    liste = f.read().splitlines() # Lit le contenu du fichier "fichier.txt" et le divise en une liste de lignes en utilisant la méthode splitlines(), qui sépare le texte en fonction des sauts de ligne.
+print(liste) # Affiche la liste des lignes lues à partir du fichier "f
